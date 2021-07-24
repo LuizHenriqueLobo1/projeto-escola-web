@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Escola</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PROJETO ESCOLA</h1>
+        <p id="description">Implementando CRUD do Projeto Escola usando HTML, CSS e JS.</p>
+    </header>
+        <div id="entrada">
+            <p></p>
+            <input type="button" value="Cadastrar Aluno" id="bCadastrarAluno" onclick="exibeDivs('cadastrar')"/>
+            <input type="button" value="Listar Alunos" id="bListarAlunos" onclick="exibeDivs('listar')"/>
+            <input type="button" value="Alterar Aluno" id="bAlterarAluno" onclick="exibeDivs('alterar')"/>
+            <input type="button" value="Remover Aluno" id="bRemoverAluno" onclick="exibeDivs('remover')"/> 
+        </div>
+    <section>
+        <p></p>
+        <div class="hide" id="cadastrar">
+            <form id="formCadastro">
+                <label for="txtNome">Nome</label><input type="text" name="nome" id="txtNome" placeholder="Digite seu nome..."/>
+                <label for="sSexo">Sexo</label><br>
+                <select class="opcoes" name="sexo" id="sSexo">
+                    <option disabled="disabled" selected="selected">Escolha sua opção</option>
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                    <option>Outros</option>
+                </select><br>
+                <label for="numIdade">Idade</label><br><input type="number" name="idade" id="numIdade" placeholder="Digite sua idade..."/>
+                <input type="button" value="Cadastrar" id="bCadastrar" onclick="cadastrar()">
+            </form>
+        </div>
+        <div class="hide" id="listar">
+            <h1 id="titleLista">Lista de Alunos</h1>
+            <div id="listaAlunos">
+                Alunos...
+            </div>
+        </div>
+        <div class="hide" id="alterar">
+            <label for="alterarAluno">Digite o ID do aluno</label><br>
+            <input type="number" id="alterarAluno" placeholder="Digite o ID..."><br>
+            <label>O que deseja alterar?</label><br>
+            <input type="button" value="Nome" id="alterarNome" onclick="exibeDivs('divNovoNome')">
+            <input type="button" value="Sexo" id="alterarSexo" onclick="exibeDivs('divNovoSexo')">
+            <input type="button" value="Idade" id="alterarIdade" onclick="exibeDivs('divNovaIdade')">
+                <div class="aHide" id="divNovoNome">
+                    <label for="novoNome">Novo Nome</label>
+                    <input type="text" id="novoNome" placeholder="Digite o novo nome...">
+                    <input type="button" id="btnAlterarNome" value="Alterar">
+                </div>
+                <div class="aHide" id="divNovoSexo">
+                    <label for="sNovoSexo">Novo Sexo</label>
+                    <select class="opcoes" name="novoSexo" id="sNovoSexo">
+                        <option disabled="disabled" selected="selected">Escolha sua opção</option>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                        <option>Outros</option>
+                    </select><br>
+                    <input type="button" id="btnAlterarSexo" value="Alterar">
+                </div>
+                <div class="aHide" id="divNovaIdade">
+                    <label for="novaIdade">Nova Idade</label>
+                    <input type="text" id="novaIdade" placeholder="Digite a nova idade...">
+                    <input type="button" id="btnAlterarIdade" value="Alterar">
+                </div>
+        </div>
+        <div class="hide" id="remover">
+            <label for="idAluno">Digite o ID do aluno</label><br>
+            <input type="number" id="idAluno" placeholder="Digite o ID..."><br>
+            <input type="button" value="Remover" id="btnRemover" onclick="remover()">
+        </div>
+        <br>
+    </section>
+    <footer>
+        <p>&copy; Luiz Henrique Lobo</p>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
