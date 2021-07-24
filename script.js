@@ -31,16 +31,26 @@ function exibeDivs(id) {
 function cadastrar(qtdAlunos) {
 
 	let novoAluno = new aluno()
+	let confirmacoes = 0
 
 	novoAluno.nome  = document.querySelector('input#txtNome').value
+	if(verificaNome(novoAluno.nome) == 1)
+		confirmacoes++
+	
 	novoAluno.sexo  = document.querySelector('select#sSexo').value
+	if(verificaSexo(novoAluno.sexo) == 1)
+		confirmacoes++
+
 	novoAluno.idade = document.querySelector('input#numIdade').value
+	if(verificaIdade(novoAluno.idade) == 1)
+		confirmacoes++
 
-	arrayAlunos.push(novoAluno)
-
-	this.qtdAlunos++;
-
-	window.alert(`Aluno ${this.qtdAlunos} cadastrado com sucesso.`)
+	if(confirmacoes == 3) {
+		arrayAlunos.push(novoAluno)
+		this.qtdAlunos++;
+		window.alert(`Aluno ${this.qtdAlunos} cadastrado com sucesso.`)
+	} else
+		window.alert('Houve um erro em uma ou mais credenciais.')
 }
 
 function listar(qtdAlunos) {
@@ -109,4 +119,31 @@ function remover(qtdAlunos) {
 		window.alert(`Aluno ${idAluno} removido com sucesso.`)
 	} else
 		window.alert('Nenhum aluno na lista.')
+}
+
+function verificaNome(nome) {
+	let retorno = 0
+	if(nome.length <= 3) 
+		retorno = 0
+	else
+		retorno = 1
+	return retorno
+}
+
+function verificaSexo(sexo) {
+	let retorno = 0
+	if(sexo == 'Escolha sua opção')
+		retorno = 0
+	else
+		retorno = 1
+	return retorno
+}
+
+function verificaIdade(idade) {
+	let retorno = 0
+	if(idade <= 3 || idade >= 100)
+		retorno = 0
+	else
+		retorno = 1
+	return retorno
 }
