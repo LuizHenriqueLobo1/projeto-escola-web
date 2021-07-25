@@ -153,6 +153,23 @@ function remover(qtdAlunos) {
 		window.alert('Nenhum aluno na lista.')
 }
 
+let btnRemoverTodos = document.getElementById('bRemoverTodos')
+btnRemoverTodos.addEventListener('click', (qtdAlunos) => {
+	
+	if(this.qtdAlunos > 0) {
+		let confirm = window.confirm('Tem certeza que deseja excluir todos os alunos?')
+
+		if(confirm) {
+			for(let i = 0; i < this.qtdAlunos; i++) {
+				arrayAlunos.splice(i, 1)
+			}
+			this.qtdAlunos = 0
+			window.alert(`Todos os alunos foram apagados.`)
+		}
+	} else
+		window.alert(`Nenhum aluno na lista.`)
+})
+
 function verificaNome(nome) {
 	let retorno = 0
 	if(nome.length <= 3) 
