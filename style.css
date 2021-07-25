@@ -45,7 +45,7 @@ div#entrada {
 }
 
 input[type=button]:hover{
-    color: #E793C8;
+    color: #49AEC2;
     font-size: 14pt;
 }
 
@@ -71,7 +71,7 @@ div#cadastrar {
     height: auto;
     border-radius: 12px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
-    padding-top: 5px;
+    padding-top: 3px;
 }
 
 div#listar {
