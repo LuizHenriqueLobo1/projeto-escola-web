@@ -90,35 +90,53 @@ function listar(qtdAlunos) {
 
 let btnAlterarNome = document.getElementById('btnAlterarNome')
 btnAlterarNome.addEventListener('click', (qtdAlunos) => {
+
 	let novoNome = document.getElementById('novoNome').value
 	let idAluno  = document.getElementById('alterarAluno').value
-	if(verificaId(idAluno, this.qtdAlunos) == 1) {
-		arrayAlunos[idAluno-1].nome = novoNome
-		window.alert(`Nome do aluno ${idAluno} alterado para ${novoNome} com sucesso.`)
-	} else
-		window.alert(`ID inválido.`)
+
+	if(verificaNome(novoNome) == 0) {
+		window.alert(`Nome inválido.`)
+	} else {
+		if(verificaId(idAluno, this.qtdAlunos) == 1) {
+			arrayAlunos[idAluno-1].nome = novoNome
+			window.alert(`Nome do aluno ${idAluno} alterado para ${novoNome} com sucesso.`)
+		} else
+			window.alert(`ID inválido.`)
+	}
 })
 
 let btnAlterarSexo = document.getElementById('btnAlterarSexo')
 btnAlterarSexo.addEventListener('click', (qtdAlunos) => {
+
 	let novoSexo = document.getElementById('sNovoSexo').value
 	let idAluno  = document.getElementById('alterarAluno').value
-	if(verificaId(idAluno, this.qtdAlunos) == 1) {
-		arrayAlunos[idAluno-1].sexo = novoSexo
-		window.alert(`Sexo do aluno ${idAluno} alterado para ${novoSexo} com sucesso.`)
-	} else	
-		window.alert(`ID inválido.`)
+	
+	if(verificaSexo(novoSexo) == 0) {
+		window.alert(`Sexo inválido.`)
+	} else {
+		if(verificaId(idAluno, this.qtdAlunos) == 1) {
+			arrayAlunos[idAluno-1].sexo = novoSexo
+			window.alert(`Sexo do aluno ${idAluno} alterado para ${novoSexo} com sucesso.`)
+		} else	
+			window.alert(`ID inválido.`)
+	}
 })
 
 let btnAlterarIdade = document.getElementById('btnAlterarIdade')
 btnAlterarIdade.addEventListener('click', (qtdAlunos) => {
+
 	let novaIdade = document.getElementById('novaIdade').value
 	let idAluno   = document.getElementById('alterarAluno').value
-	if(verificaId(idAluno, this.qtdAlunos) == 1) {
-		arrayAlunos[idAluno-1].idade = novaIdade
-		window.alert(`Idade do aluno ${idAluno} alterada para ${novaIdade} com sucesso.`)
-	} else
-		window.alert(`ID inválido.`)
+
+	if(verificaIdade(novaIdade) == 0) {
+		window.alert(`Idade inválido.`)
+	} else {
+		if(verificaId(idAluno, this.qtdAlunos) == 1) {
+			arrayAlunos[idAluno-1].idade = novaIdade
+			window.alert(`Idade do aluno ${idAluno} alterada para ${novaIdade} com sucesso.`)
+		} else
+			window.alert(`ID inválido.`)
+	}
 })
 
 function remover(qtdAlunos) {
