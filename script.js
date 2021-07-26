@@ -24,8 +24,6 @@ function exibeDivs(id) {
 		);
 	}
 	document.getElementById(id).style.display = "block";
-	if(id == "listar")
-		listar()
 }
 
 function cadastrar(qtdAlunos) {
@@ -58,7 +56,8 @@ function cadastrar(qtdAlunos) {
 	}
 }
 
-function listar(qtdAlunos) {
+let listarAlunos = document.getElementById('bListarAlunos')
+listarAlunos.addEventListener('click', (qtdAlunos) => {
 
 	let list = document.getElementById("listaAlunos")
 
@@ -86,7 +85,7 @@ function listar(qtdAlunos) {
 		aluno.appendChild(idade)
 		list.appendChild(aluno)
 	}
-}
+})
 
 let btnAlterarNome = document.getElementById('btnAlterarNome')
 btnAlterarNome.addEventListener('click', (qtdAlunos) => {
