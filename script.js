@@ -1,5 +1,6 @@
 class aluno {
 	constructor(nome, sexo, idade) {
+		this.id = 0;
 		this.nome = 'indefinido';
 		this.sexo = 'indefinido';
 		this.idade = 0;
@@ -30,6 +31,8 @@ function cadastrar(qtdAlunos) {
 
 	let novoAluno = new aluno()
 	let confirmacoes = 0
+
+	novoAluno.id = this.qtdAlunos + 1001
 
 	novoAluno.nome  = document.querySelector('input#txtNome').value
 	if(verificaNome(novoAluno.nome) == 1)
@@ -68,6 +71,7 @@ listarAlunos.addEventListener('click', (qtdAlunos) => {
 
 	for(let i = 0; i < this.qtdAlunos; i++) {
 		let aluno = document.createElement('div')
+		let id    = document.createElement('p')
 		let nome  = document.createElement('p')
 		let sexo  = document.createElement('p')
 		let idade = document.createElement('p')
@@ -76,10 +80,12 @@ listarAlunos.addEventListener('click', (qtdAlunos) => {
 		aluno.setAttribute('class', 'divAluno')
 
 		aluno.textContent = `Aluno ${i+1}`
+		id.textContent = `ID: ${arrayAlunos[i].id}`
 		nome.textContent = `Nome: ${arrayAlunos[i].nome}`
 		sexo.textContent = `Sexo: ${arrayAlunos[i].sexo}`
 		idade.textContent = `Idade: ${arrayAlunos[i].idade}`
 		
+		aluno.appendChild(id)
 		aluno.appendChild(nome)
 		aluno.appendChild(sexo)
 		aluno.appendChild(idade)
