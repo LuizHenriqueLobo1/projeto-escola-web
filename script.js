@@ -100,15 +100,18 @@ btnAlterarNome.addEventListener('click', (qtdAlunos) => {
 	let idAluno  = document.getElementById('alterarAluno').value
 	let posicao  = achaPosicaoId(idAluno, qtdAlunos)
 
-	if(verificaNome(novoNome) == 0) {
-		window.alert(`Nome inválido.`)
-	} else {
-		if(verificaId(idAluno, this.qtdAlunos) == 1) {
-			arrayAlunos[posicao].nome = novoNome
-			window.alert(`O nome do aluno foi alterado para ${novoNome} com sucesso.`)
-		} else
-			window.alert(`ID inválido.`)
-	}
+	if(this.qtdAlunos > 0) {
+		if(verificaNome(novoNome) == 0) {
+			window.alert(`Nome inválido.`)
+		} else {
+			if(verificaId(idAluno, this.qtdAlunos) == 1) {
+				arrayAlunos[posicao].nome = novoNome
+				window.alert(`O nome do aluno foi alterado para ${novoNome} com sucesso.`)
+			} else
+				window.alert(`ID inválido.`)
+		}	
+	} else
+		window.alert('Nenhum aluno na lista.')
 })
 
 let btnAlterarSexo = document.getElementById('btnAlterarSexo')
@@ -118,15 +121,18 @@ btnAlterarSexo.addEventListener('click', (qtdAlunos) => {
 	let idAluno  = document.getElementById('alterarAluno').value
 	let posicao  = achaPosicaoId(idAluno, qtdAlunos)
 
-	if(verificaSexo(novoSexo) == 0) {
-		window.alert(`Sexo inválido.`)
-	} else {
-		if(verificaId(idAluno, this.qtdAlunos) == 1) {
-			arrayAlunos[posicao].sexo = novoSexo
-			window.alert(`O sexo do aluno foi alterado para ${novoSexo} com sucesso.`)
-		} else	
-			window.alert(`ID inválido.`)
-	}
+	if(this.qtdAlunos > 0) {
+		if(verificaSexo(novoSexo) == 0) {
+			window.alert(`Sexo inválido.`)
+		} else {
+			if(verificaId(idAluno, this.qtdAlunos) == 1) {
+				arrayAlunos[posicao].sexo = novoSexo
+				window.alert(`O sexo do aluno foi alterado para ${novoSexo} com sucesso.`)
+			} else	
+				window.alert(`ID inválido.`)
+		}
+	} else
+		window.alert('Nenhum aluno na lista.')
 })
 
 let btnAlterarIdade = document.getElementById('btnAlterarIdade')
@@ -136,15 +142,18 @@ btnAlterarIdade.addEventListener('click', (qtdAlunos) => {
 	let idAluno   = document.getElementById('alterarAluno').value
 	let posicao   = achaPosicaoId(idAluno, qtdAlunos)
 
-	if(verificaIdade(novaIdade) == 0) {
-		window.alert(`Idade inválido.`)
-	} else {
-		if(verificaId(idAluno, this.qtdAlunos) == 1) {
-			arrayAlunos[posicao].idade = novaIdade
-			window.alert(`A idade do aluno alterada para ${novaIdade} com sucesso.`)
-		} else
-			window.alert(`ID inválido.`)
-	}
+	if(this.qtdAlunos > 0) {
+		if(verificaIdade(novaIdade) == 0) {
+			window.alert(`Idade inválido.`)
+		} else {
+			if(verificaId(idAluno, this.qtdAlunos) == 1) {
+				arrayAlunos[posicao].idade = novaIdade
+				window.alert(`A idade do aluno alterada para ${novaIdade} com sucesso.`)
+			} else
+				window.alert(`ID inválido.`)
+		}
+	} else
+		window.alert('Nenhum aluno na lista.')
 })
 
 function remover(qtdAlunos) {
