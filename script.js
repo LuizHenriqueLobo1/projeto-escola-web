@@ -98,13 +98,14 @@ btnAlterarNome.addEventListener('click', (qtdAlunos) => {
 
 	let novoNome = document.getElementById('novoNome').value
 	let idAluno  = document.getElementById('alterarAluno').value
+	let posicao  = achaPosicaoId(idAluno, qtdAlunos)
 
 	if(verificaNome(novoNome) == 0) {
 		window.alert(`Nome inválido.`)
 	} else {
 		if(verificaId(idAluno, this.qtdAlunos) == 1) {
-			arrayAlunos[idAluno-1].nome = novoNome
-			window.alert(`Nome do aluno ${idAluno} alterado para ${novoNome} com sucesso.`)
+			arrayAlunos[posicao].nome = novoNome
+			window.alert(`O nome do aluno foi alterado para ${novoNome} com sucesso.`)
 		} else
 			window.alert(`ID inválido.`)
 	}
@@ -115,13 +116,14 @@ btnAlterarSexo.addEventListener('click', (qtdAlunos) => {
 
 	let novoSexo = document.getElementById('sNovoSexo').value
 	let idAluno  = document.getElementById('alterarAluno').value
-	
+	let posicao  = achaPosicaoId(idAluno, qtdAlunos)
+
 	if(verificaSexo(novoSexo) == 0) {
 		window.alert(`Sexo inválido.`)
 	} else {
 		if(verificaId(idAluno, this.qtdAlunos) == 1) {
-			arrayAlunos[idAluno-1].sexo = novoSexo
-			window.alert(`Sexo do aluno ${idAluno} alterado para ${novoSexo} com sucesso.`)
+			arrayAlunos[posicao].sexo = novoSexo
+			window.alert(`O sexo do aluno foi alterado para ${novoSexo} com sucesso.`)
 		} else	
 			window.alert(`ID inválido.`)
 	}
@@ -132,13 +134,14 @@ btnAlterarIdade.addEventListener('click', (qtdAlunos) => {
 
 	let novaIdade = document.getElementById('novaIdade').value
 	let idAluno   = document.getElementById('alterarAluno').value
+	let posicao   = achaPosicaoId(idAluno, qtdAlunos)
 
 	if(verificaIdade(novaIdade) == 0) {
 		window.alert(`Idade inválido.`)
 	} else {
 		if(verificaId(idAluno, this.qtdAlunos) == 1) {
-			arrayAlunos[idAluno-1].idade = novaIdade
-			window.alert(`Idade do aluno ${idAluno} alterada para ${novaIdade} com sucesso.`)
+			arrayAlunos[posicao].idade = novaIdade
+			window.alert(`A idade do aluno alterada para ${novaIdade} com sucesso.`)
 		} else
 			window.alert(`ID inválido.`)
 	}
@@ -204,9 +207,24 @@ function verificaIdade(idade) {
 
 function verificaId(id, qtdAlunos) {
 	let retorno = 0
-	if(id < 1 || id > this.qtdAlunos)
+	let verifica = false
+	for(let i = 0; i < this.qtdAlunos; i++) {
+		if(id == arrayAlunos[i].id)
+			verifica = true
+	}
+	if(verifica == false)
 		retorno = 0
 	else
 		retorno = 1
 	return retorno
+}
+
+function achaPosicaoId(id, qtdAlunos) {
+	let posicao = 0
+	for(let i = 0; i < this.qtdAlunos; i++) {
+		if(id == arrayAlunos[i].id) {
+			posicao = i
+		}
+	}
+	return posicao
 }
