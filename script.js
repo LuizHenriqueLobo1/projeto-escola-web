@@ -149,10 +149,12 @@ btnAlterarIdade.addEventListener('click', (qtdAlunos) => {
 
 function remover(qtdAlunos) {
 
+	let idAluno = document.getElementById("idAluno").value
+	let posicao = achaPosicaoId(idAluno, qtdAlunos)
+
 	if(this.qtdAlunos > 0) {
-		let idAluno = document.getElementById("idAluno").value
 		if(verificaId(idAluno, this.qtdAlunos) == 1) {
-			arrayAlunos.splice(idAluno-1, 1)
+			arrayAlunos.splice(posicao, 1)
 			this.qtdAlunos--;
 			window.alert(`Aluno ${idAluno} removido com sucesso.`)
 		} else
