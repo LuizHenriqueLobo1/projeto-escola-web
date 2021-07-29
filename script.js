@@ -59,8 +59,7 @@ function cadastrar(qtdAlunos) {
 	}
 }
 
-let listarAlunos = document.getElementById('bListarAlunos')
-listarAlunos.addEventListener('click', (qtdAlunos) => {
+function listar(qtdAlunos) {
 
 	let list = document.getElementById("listaAlunos")
 
@@ -91,7 +90,62 @@ listarAlunos.addEventListener('click', (qtdAlunos) => {
 		aluno.appendChild(idade)
 		list.appendChild(aluno)
 	}
+}
+
+function ordenaArrayPorId() {
+	arrayAlunos.sort((a, b) => {
+		if(a.id > b.id)
+			return 1
+		else
+			return -1
+	})
+}
+
+function ordenaArrayPorNome() {
+	arrayAlunos.sort((a, b) => {
+		if(a.nome > b.nome)
+			return 1
+		else
+			return -1
+	})
+}
+
+let listarAlunos = document.getElementById('bListarAlunos')
+listarAlunos.addEventListener('click', () => {
+	listar()
 })
+
+let listarPadrao = document.getElementById('listagemPadrao')
+listarPadrao.addEventListener('click', () =>  {
+	if(checaTipoListagem() != 'id') {
+		ordenaArrayPorId()
+		listar()
+	} else
+		window.alert('O tipo de listagem já está como "Padrão".')
+})
+
+let listarAlfa = document.getElementById('listagemAlfabetica')
+listarAlfa.addEventListener('click', () => {
+	if(checaTipoListagem() != 'alfabetica') {
+		ordenaArrayPorNome()
+		listar()
+	} else
+		window.alert('O tipo de listagem já está como "Alfabética".')
+})
+
+function checaTipoListagem(qtdAlunos) {
+	let count = 0
+	for(let i = 0; i < this.qtdAlunos; i++) {
+		if(arrayAlunos[i].id == (i + 1) + 1000)
+			count++
+		else
+			count--
+	}
+	if(count == this.qtdAlunos)
+		return 'id'
+	else
+		return 'alfabetica'
+}
 
 let btnAlterarNome = document.getElementById('btnAlterarNome')
 btnAlterarNome.addEventListener('click', (qtdAlunos) => {
