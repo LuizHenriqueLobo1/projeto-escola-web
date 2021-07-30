@@ -115,6 +115,12 @@ listarAlfa.addEventListener('click', () => {
 	listar()
 })
 
+let listarIdadeCre = document.getElementById('listagemIdadeCre')
+listarIdadeCre.addEventListener('click', () => {
+	ordenaArrayPor('idade')
+	listar()
+})
+
 let btnAlterarNome = document.getElementById('btnAlterarNome')
 btnAlterarNome.addEventListener('click', (qtdAlunos) => {
 
