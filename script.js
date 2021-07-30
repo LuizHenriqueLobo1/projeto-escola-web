@@ -7,8 +7,28 @@ class aluno {
 	}
 }
 
-var arrayAlunos = []
-var qtdAlunos = 0
+var arrayAlunos = [
+	{
+		id: 1001,
+		nome: 'Nabucodonosor',
+		sexo: 'Masculino',
+		idade: 37
+	},
+	{
+		id: 1002,
+		nome: 'Gertrudes',
+		sexo: 'Feminino',
+		idade: 22
+	},
+	{
+		id: 1003,
+		nome: 'Vicente',
+		sexo: 'Masculino',
+		idade: 19
+	}
+]
+
+var qtdAlunos = 3
 
 function exibeDivs(id) {
 	if(document.getElementById(id).style.display == "block") {
