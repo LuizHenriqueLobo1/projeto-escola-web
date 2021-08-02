@@ -41,9 +41,18 @@
             <input type="button" value="Alfabética" id="listagemAlfabetica">
             <input type="button" value="Idade Crescente" id="listagemIdadeCre">
             <h1 id="titleLista">Lista de Alunos</h1>
-            <div id="listaAlunos">
-                Alunos...
-            </div>
+            <table id="listaAlunos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Sexo</th>
+                        <th>Idade</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                </tbody>
+            </table>
         </div>
         <div class="hide" id="alterar">
             <label for="alterarAluno">Digite o ID do aluno</label><br>

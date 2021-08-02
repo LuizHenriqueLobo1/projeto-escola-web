@@ -172,15 +172,15 @@ p#infoClick {
     padding: 16px;
 }
 
-.divAluno {
+table, th, td {
     background-color: rgba(0, 0, 0, 0.500);
-    border-radius: 40px;
-    width: 500px;
+    border: 3px solid white;
+    border-collapse: collapse;
+    width: 640px;
     margin: auto;
-    margin-top: 25px;
-    padding: 4px;
-    padding-top: 20px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.246);
+    margin-bottom: 20px;
+    padding: 20px 20px;
+    text-align: center;
 }
 
 footer {

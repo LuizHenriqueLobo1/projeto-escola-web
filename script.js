@@ -81,7 +81,7 @@ function cadastrar(qtdAlunos) {
 
 function listar(qtdAlunos) {
 
-	let list = document.getElementById("listaAlunos")
+	let list = document.getElementById("corpoTabela")
 
 	list.textContent = ''
 	
@@ -89,20 +89,18 @@ function listar(qtdAlunos) {
 		list.textContent = 'Nenhum aluno cadastrado.'
 
 	for(let i = 0; i < this.qtdAlunos; i++) {
-		let aluno = document.createElement('div')
-		let id    = document.createElement('p')
-		let nome  = document.createElement('p')
-		let sexo  = document.createElement('p')
-		let idade = document.createElement('p')
+		let aluno = document.createElement('tr')
+		let id    = document.createElement('td')
+		let nome  = document.createElement('td')
+		let sexo  = document.createElement('td')
+		let idade = document.createElement('td')
 
 		aluno.setAttribute('id', `id${i+1}`)
-		aluno.setAttribute('class', 'divAluno')
 
-		aluno.textContent = `Aluno ${i+1}`
-		id.textContent = `ID: ${arrayAlunos[i].id}`
-		nome.textContent = `Nome: ${arrayAlunos[i].nome}`
-		sexo.textContent = `Sexo: ${arrayAlunos[i].sexo}`
-		idade.textContent = `Idade: ${arrayAlunos[i].idade}`
+		id.textContent = `${arrayAlunos[i].id}`
+		nome.textContent = `${arrayAlunos[i].nome}`
+		sexo.textContent = `${arrayAlunos[i].sexo}`
+		idade.textContent = `${arrayAlunos[i].idade}`
 		
 		aluno.appendChild(id)
 		aluno.appendChild(nome)
