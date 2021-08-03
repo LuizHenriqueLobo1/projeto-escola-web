@@ -29,6 +29,7 @@ var arrayAlunos = [
 ]
 
 var qtdAlunos = 3
+var idAluno = 3
 
 function exibeDivs(id) {
 	if(document.getElementById(id).style.display == "block") {
@@ -47,12 +48,12 @@ function exibeDivs(id) {
 	document.getElementById(id).style.display = "block";
 }
 
-function cadastrar(qtdAlunos) {
+function cadastrar(idAluno, qtdAlunos) {
 
 	let novoAluno = new aluno()
 	let confirmacoes = 0
 
-	novoAluno.id = this.qtdAlunos + 1001
+	novoAluno.id = this.idAluno + 1001
 
 	novoAluno.nome  = document.querySelector('input#txtNome').value
 	if(verificaNome(novoAluno.nome) == 1)
@@ -75,6 +76,7 @@ function cadastrar(qtdAlunos) {
 	if(confirmacoes == 3) {
 		arrayAlunos.push(novoAluno)
 		this.qtdAlunos++;
+		this.idAluno++;
 		window.alert(`Aluno ${this.qtdAlunos} cadastrado com sucesso.`)
 	}
 }
