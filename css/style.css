@@ -173,13 +173,14 @@ p#infoClick {
 }
 
 table, th, td {
-    background-color: rgba(0, 0, 0, 0.500);
-    border: 3px solid white;
+    background-color: white;
+    border: 3px solid black;
     border-collapse: collapse;
     width: 640px;
     margin: auto;
     margin-bottom: 20px;
     padding: 20px 20px;
+    color: black;
     text-align: center;
 }
 
