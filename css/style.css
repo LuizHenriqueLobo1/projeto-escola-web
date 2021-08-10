@@ -28,16 +28,17 @@ input {
     cursor: pointer;
 }
 
-p#description {
+.descricao {
     font: normal 12pt Arial;
     color: rgba(255, 255, 255, 0.637);
 }
 
-div#entrada {
+.entrada {
     background-color: rgb(53, 49, 52);
     font: normal 20pt Arial;
     width: 900px;
     margin: auto;
+    margin-top: 20px;
     text-align: center;
     height: 125px;
     border-radius: 12px;
@@ -66,6 +67,7 @@ div#cadastrar {
     font: normal 20pt Arial;
     width: 380px;
     margin: auto;
+    margin-top: 20px;
     text-align: center;
     height: auto;
     border-radius: 12px;
@@ -79,6 +81,7 @@ div#listar {
     color: white;
     width: 720px;
     margin: auto;
+    margin-top: 20px;
     text-align: center;
     height: auto;
     border-radius: 12px;
@@ -93,6 +96,7 @@ div#alterar {
     color: white;
     width: 500px;
     margin: auto;
+    margin-top: 20px;
     text-align: center;
     border-radius: 12px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
@@ -106,6 +110,7 @@ div#remover {
     color: white;
     width: 400px;
     margin: auto;
+    margin-top: 20px;
     text-align: center;
     border-radius: 12px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
